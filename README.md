@@ -28,6 +28,14 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
     border-radius: 4px;
     font-weight: bold;
   }
+  .severity-medium {
+    color: #fff;
+    background-color: #f1c40f;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -70,6 +78,12 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
     border-radius: 4px;
     overflow-x: auto;
   }
+  .analysis {
+    background-color: #dff0d8;
+    border-left: 5px solid #3c763d;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
 </style>
 </head>
 <body>
@@ -83,7 +97,28 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>2. Source IP Details (External)</h3>
+  <h3>2. Alert Details</h3>
+  <table>
+    <tr><th>Field</th><th>Value</th></tr>
+    <tr><td>EventID</td><td>120</td></tr>
+    <tr><td>Event Time</td><td>Mar 01, 2022, 10:10 AM</td></tr>
+    <tr><td>Rule</td><td>SOC170 - Passwd Found in Requested URL - Possible LFI Attack</td></tr>
+    <tr><td>Level</td><td>Security Analyst</td></tr>
+    <tr><td>Hostname</td><td>WebServer1006</td></tr>
+    <tr><td>Destination IP</td><td>172.16.17.13</td></tr>
+    <tr><td>Source IP</td><td>106.55.45.162</td></tr>
+    <tr><td>HTTP Method</td><td>GET</td></tr>
+    <tr><td>Requested URL</td><td>https://172.16.17.13/?file=../../../../etc/passwd</td></tr>
+    <tr><td>User-Agent</td><td>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)</td></tr>
+    <tr><td>Alert Trigger Reason</td><td>URL Contains passwd</td></tr>
+    <tr><td>Device Action</td><td>Allowed</td></tr>
+    <tr><td>HTTP Response Status</td><td>500 Internal Server Error</td></tr>
+    <tr><td>HTTP Response Size</td><td>0</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>3. Source IP Analysis</h3>
   <table>
     <tr><th>Field</th><th>Value</th></tr>
     <tr><td>IP Address</td><td>106.55.45.162</td></tr>
@@ -98,7 +133,7 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>3. Destination Device (Internal)</h3>
+  <h3>4. Destination Device (Internal)</h3>
   <table>
     <tr><th>Field</th><th>Value</th></tr>
     <tr><td>IP Address</td><td>172.16.17.13</td></tr>
@@ -112,7 +147,7 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>4. Event Timeline</h3>
+  <h3>5. Event Timeline</h3>
   <table>
     <tr><th>Time</th><th>Source</th><th>Destination</th><th>Event / Action</th><th>Status</th></tr>
     <tr><td>10:10 AM</td><td>106.55.45.162</td><td>172.16.17.13</td><td>LFI attempt (/etc/passwd)</td><td>🔴 High Risk</td></tr>
@@ -121,16 +156,29 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>5. SOC Recommendations</h3>
+  <h3>6. SOC Analysis</h3>
+  <div class="analysis">
+    <p>✅ <strong>True Positive Alert:</strong> The alert correctly identified a malicious attempt targeting the <code>/etc/passwd</code> file.</p>
+    <p>⚠️ <strong>Attack Outcome:</strong> The attack was <strong>unsuccessful</strong>. The server returned a 500 error and did not expose any sensitive information.</p>
+    <p>🛡 <strong>Containment:</strong> No containment required for WebServer1006.</p>
+    <p>📈 <strong>Escalation:</strong> No Tier 2 SOC escalation required.</p>
+    <p>🌐 <strong>Attack Source:</strong> External Internet IP originating from China.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h3>7. SOC Recommendations</h3>
   <ul>
-    <li><strong>Immediate:</strong> Block the source IP at firewall, monitor for repeats, audit WebServer1006.</li>
-    <li><strong>Investigation:</strong> Identify last logged-in user, review logs, check for similar patterns.</li>
-    <li><strong>Proactive:</strong> Implement WAF rules, sanitize URL inputs, monitor IP reputation.</li>
+    <li>Block the source IP <strong>106.55.45.162</strong> at the firewall.</li>
+    <li>Monitor for repeat attempts from Tencent Cloud IP ranges.</li>
+    <li>Audit WebServer1006 for any signs of compromise.</li>
+    <li>Ensure URL input validation and WAF rules are in place to prevent LFI attacks.</li>
+    <li>Track IP reputation via VirusTotal, Cisco Talos, and AbuseIPDB.</li>
   </ul>
 </div>
 
 <div class="section">
-  <h3>6. Reporting & Escalation</h3>
+  <h3>8. Reporting & Escalation Contacts</h3>
   <table>
     <tr><th>Role</th><th>Contact</th></tr>
     <tr><td>Admin Contact</td><td>James Tian – johnsonqu@tencent.com</td></tr>
@@ -140,7 +188,7 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>7. Color Legend</h3>
+  <h3>9. Color Legend</h3>
   <p class="legend">
     <span class="high"></span> High Risk 🔴 &nbsp;&nbsp;
     <span class="medium"></span> Warning 🟡 &nbsp;&nbsp;
@@ -149,8 +197,8 @@ Passwd Found in Requested URL - Possible LFI Attack - SOC170
 </div>
 
 <div class="section">
-  <h3>8. Conclusion</h3>
-  <p>The attack represents a <strong>malicious LFI attempt</strong> from an external Tencent Cloud IP. While unsuccessful, it indicates probing activity. Immediate firewall mitigation, logging, and monitoring are recommended.</p>
+  <h3>10. Conclusion</h3>
+  <p>This incident represents a <strong>malicious LFI attempt</strong> from an external Tencent Cloud IP. Although the attempt was unsuccessful, it confirms active probing. Immediate mitigation and monitoring are recommended to prevent future attacks.</p>
 </div>
 
 </body>
