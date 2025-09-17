@@ -32,7 +32,9 @@ The server returned **500 Internal Server Error**, preventing file exposure. ✅
 ---
 
 ### 3. Source IP Analysis
-
+<p align="center">
+  <img src="images/incident-summary.png" alt="Incident Summary" width="600">
+</p>
 | Field | Value |
 |-------|-------|
 | IP Address | 106.55.45.162 |
