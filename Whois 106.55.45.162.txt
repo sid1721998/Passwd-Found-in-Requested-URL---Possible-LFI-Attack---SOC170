@@ -1,0 +1,87 @@
+% [whois.apnic.net]
+% Whois data copyright terms    http://www.apnic.net/db/dbcopyright.html
+
+% Information related to '106.55.0.0 - 106.55.255.255'
+
+% Abuse contact for '106.55.0.0 - 106.55.255.255' is 'tencent_noc@tencent.com'
+
+inetnum:        106.55.0.0 - 106.55.255.255
+netname:        TencentCloud
+descr:          Tencent cloud computing (Beijing) Co., Ltd.
+descr:          Floor 6, Yinke Building,38 Haidian St,
+descr:          Haidian District Beijing
+country:        CN
+admin-c:        JT1125-AP
+tech-c:         JX1747-AP
+abuse-c:        AC1601-AP
+status:         ALLOCATED PORTABLE
+mnt-by:         MAINT-CNNIC-AP
+mnt-lower:      MAINT-CNNIC-AP
+mnt-routes:     MAINT-CNNIC-AP
+mnt-irt:        IRT-TencentCloud-CN
+last-modified:  2022-01-17T08:58:22Z
+source:         APNIC
+
+irt:            IRT-TencentCloud-CN
+address:        9F, FIYTA Building, Gaoxinnanyi Road, Southern
+address:        District of Hi-tech Park, Shenzhen
+e-mail:         tencent_noc@tencent.com
+abuse-mailbox:  tencent_noc@tencent.com
+admin-c:        JT1125-AP
+tech-c:         JX1747-AP
+auth:           # Filtered
+remarks:        tencent_noc@tencent.com was validated on 2025-03-07
+mnt-by:         MAINT-CNNIC-AP
+last-modified:  2025-03-07T07:43:08Z
+source:         APNIC
+
+role:           ABUSE CNNICCN
+country:        ZZ
+address:        Beijing, China
+phone:          +000000000
+e-mail:         ipas@cnnic.cn
+admin-c:        IP50-AP
+tech-c:         IP50-AP
+nic-hdl:        AC1601-AP
+remarks:        Generated from irt object IRT-CNNIC-CN
+abuse-mailbox:  ipas@cnnic.cn
+mnt-by:         APNIC-ABUSE
+last-modified:  2024-07-30T11:55:46Z
+source:         APNIC
+
+person:         James Tian
+address:        9F, FIYTA Building, Gaoxinnanyi Road,Southern
+address:        District of Hi-tech Park, Shenzhen
+country:        CN
+phone:          +86-755-86013388-84952
+e-mail:         johnsonqu@tencent.com
+nic-hdl:        JT1125-AP
+mnt-by:         MAINT-CNNIC-AP
+last-modified:  2024-03-19T08:21:31Z
+source:         APNIC
+
+person:         Jimmy Xiao
+address:        9F, FIYTA Building, Gaoxinnanyi Road,Southern
+address:        District of Hi-tech Park, Shenzhen
+country:        CN
+phone:          +86-755-86013388-80224
+e-mail:         klayliang@tencent.com
+nic-hdl:        JX1747-AP
+mnt-by:         MAINT-CNNIC-AP
+last-modified:  2021-09-17T00:38:09Z
+source:         APNIC
+
+% Information related to '106.52.0.0/14AS45090'
+
+route:          106.52.0.0/14
+descr:          Shenzhen Tencent Computer Systems Company Limited
+country:        CN
+origin:         AS45090
+notify:         jimmyxiao@tencent.com
+mnt-by:         MAINT-CNNIC-AP
+last-modified:  2019-04-18T03:50:02Z
+source:         APNIC
+
+% This query was served by the APNIC Whois Service version 1.88.34 (WHOIS-SG1)
+
+
