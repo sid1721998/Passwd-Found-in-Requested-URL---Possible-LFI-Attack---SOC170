@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="Picture2.png" alt="Incident Summary" width="600">
+</p>
 SOC170 - Passwd Found in Requested URL - Possible LFI Attack
 
 ## Incident ID: SOC170-20220301 🔴 High
