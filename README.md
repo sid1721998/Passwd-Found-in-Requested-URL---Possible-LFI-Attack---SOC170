@@ -33,7 +33,7 @@ The server returned **500 Internal Server Error**, preventing file exposure. ✅
 
 ### 3. Source IP Analysis
 <p align="center">
-  <img src="picture1.img" alt="Incident Summary" width="600">
+  <img src="picture1.png" alt="Incident Summary" width="600">
 </p>
 | Field | Value |
 |-------|-------|
