@@ -6,7 +6,7 @@
 
 SOC170 - Passwd Found in Requested URL - Possible LFI Attack
 <br></br>
-<p class="red-text"><b>Tomislav Vrbicic</b></p>
+<p class="red-text">Tomislav Vrbicic</p>
 ## Incident ID: SOC170-20220301 🔴 High
 
 ---
